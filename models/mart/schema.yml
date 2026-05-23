@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: mart_pedestrian_hourly
+    description: "Hourly pedestrian counts enriched with weather and holiday data. Main table for forecasting."
+    columns:
+      - name: pedestrian_id
+        tests:
+          - not_null
+          - unique
+      - name: pedestrian_count
+        tests:
+          - not_null
+      - name: sensing_date
+        tests:
+          - not_null
+
+  - name: mart_pedestrian_daily
+    description: "Daily aggregated pedestrian counts per sensor. Used for trend analysis in Power BI."
+    columns:
+      - name: sensing_date
+        tests:
+          - not_null
+      - name: location_id
+        tests:
+          - not_null
+      - name: daily_total
+        tests:
+          - not_null

@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    database: melbourne-pedestrian-pipeline
+    schema: raw
+    tables:
+      - name: pedestrian_counts
+        description: "Raw pedestrian counts per hour per sensor"
+      - name: sensor_locations
+        description: "Sensor reference data with coordinates"
+      - name: weather_hourly
+        description: "Hourly weather data from NASA POWER"
+      - name: public_holidays
+        description: "Australian public holidays (Victoria)"
